@@ -1,0 +1,29 @@
+.row {
+    background-color: pink;
+}
+#main-header {
+    background-color: powderblue;
+}
+h1{
+    text-align: center;
+}
+h2{
+    text-align: center;
+}
+
+.right{
+    text-align: right;
+}
+.mid{
+    text-align: center;
+}
+hr {
+    border-block: 2px;
+    color: black;
+}
+.body-header {
+    height: 200vh;
+}
+.col-8{
+    height: 10vh;
+}
