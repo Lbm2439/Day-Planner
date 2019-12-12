@@ -18,8 +18,12 @@ h2{
     text-align: center;
 }
 hr {
-    border-block: 2px;
-    color: black;
+    position: relative;
+    top: 9px;
+    border: none;
+    height: 9px;
+    background: black;
+    margin-bottom: 9px;
 }
 .body-header {
     height: 200vh;
