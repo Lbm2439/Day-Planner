@@ -1,20 +1,4 @@
 
-//color changes for past-present-future
-// else if ??
-// dump at end of day
-
-// if (condition) {
-    
-// } else if {
-    
-// }
-
-
-
-
-
-
-
 //moment here:
 
 var today = moment();
@@ -24,14 +8,32 @@ $("#date").text(moment().format('LLL'));
 
 
 
+// save button
+$(".save-btn").on("click", function() {
 
-//save button
+    $('input[type="text"]').each(function(){    
+        var id = $(this).attr('class');
+        var value = $(this).val();
+       localStorage.setItem(id, value);
 
-// var = saveBttn("far");
+    });   
+});
+$('.save-btn').on('click', function(){
+    $('input[type="text"]').each(function(){    
+        var id = $(this).attr('class');
+        var value = localStorage.getItem(id);
+
+        $(this).val(value);
+
+    }); 
+});
+
+console.log('hello');
 
 
-// function clickSave() {
-//   document.getElementById("far").innerHTML = "Item Saved";
-//   document.getElementById("far").addEventListener("click", clickSave);
+
+
+//   document.getElementById("save-btn").innerHTML = "Item Saved";
+//   document.getElementById("save-btn").addEventListener("click", clickSave);
 // }
 
