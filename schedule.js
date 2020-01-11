@@ -16,30 +16,50 @@ $("#date").text(moment().format('LLL'));
 // save button
 $(".save-btn").on("click", function() {
   
- var taskIndex = $(this).attr("data-taskIndex");
- var inputLine = $(".body-header .row")[taskIndex]
- var inputField = $(inputLine).children('.form').children('input')
- var inputVal = inputField.val()
+    let inputInfo = $('.form-control');
+ 
+    
+    for (let i = 0; i < inputInfo.length; i++){
+        let currentInfo = inputInfo[i];
+        let textInfo = $(currentInfo).val();
+        let textAttr = $(currentInfo).attr("id");
+        localStorage.setItem(textAttr, textInfo)
+
+    }
+});
+
+
+$("#hour-9").val(localStorage.getItem("hour-9"));
+$("#hour-10").val(localStorage.getItem("hour-10"));
+$("#hour-11").val(localStorage.getItem("hour-11"));
+$("#hour-12").val(localStorage.getItem("hour-12"));
+$("#hour-13").val(localStorage.getItem("hour-13"));
+$("#hour-14").val(localStorage.getItem("hour-14"));
+$("#hour-15").val(localStorage.getItem("hour-15"));
+$("#hour-16").val(localStorage.getItem("hour-16"));
+$("#hour-17").val(localStorage.getItem("hour-17"));
+   
+    //var time = $();
 
  // get the local storage object and convert it from a string to an object (JSON.parse())
  // only modify the key that corresponds to the taskIndex
  // convert object back into a string (JSON.stringify())
  // save to localStorage
 
-localStorage.setItem("task", inputVal)
+
 
 //save values without overwriting-create object with 9 keys to reflect fields
-var tasks = {
-    0: "",
-    1: "",
-    2: "",
-    3: "",
-    4: "",
-    5: "",
-    6: "",
-    7: "",
-    8: ""
-}
+// var tasks = {
+//     0: "",
+//     1: "",
+//     2: "",
+//     3: "",
+//     4: "",
+//     5: "",
+//     6: "",
+//     7: "",
+//     8: ""
+// }
 
 //check for local storage and pop into where it belongs
 //empty local storage at end of day
@@ -62,7 +82,7 @@ var tasks = {
 //         $(this).val(value);
 
 //     }); 
-});
+
 
 
 
